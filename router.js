@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { cartController } from './controllers/CartController.js'
+import { cartController } from './controllers/cartController.js'
 import { checkout } from './controllers/checkout.js'
 import { CreateCart } from './controllers/CreateCart.js'
 import { CreateProduct } from './controllers/CreateProduct.js'

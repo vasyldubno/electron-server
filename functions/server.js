@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import * as dotenv from 'dotenv'
 import mongoose from 'mongoose'
-import { router } from './router.js'
+import { router } from '../router.js'
 dotenv.config()
 import serverless from 'serverless-http'
 
@@ -18,7 +18,7 @@ app.use(cors({
 app.use(router)
 
 app.use('/.netlify/functions/server', router)
-app.use('/', (req, res) => res.sendFile(path.join(__dirname, './index.html')))
+app.use('/', (req, res) => res.json({ message: 'Hello'}))
 
 try {
 	mongoose.set("strictQuery", false)
@@ -29,7 +29,8 @@ try {
 
 // app.listen(process.env.PORT, () => console.log(`Server is running on http://localhost:${process.env.PORT}`))
 
-export default app
+// export default app
 export const handler = serverless(app)
+// module.exports.handler = serverless(app)
 
 
