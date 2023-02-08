@@ -6,7 +6,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "nodemon index.js",
-		"build": "netlify-lambda build express"
+		"build": "netlify-lambda build ."
 	},
 	"dependencies": {
 		"cors": "^2.8.5",
