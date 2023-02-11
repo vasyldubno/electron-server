@@ -4,7 +4,7 @@ import { v4 } from 'uuid'
 const CartSchema = new mongoose.Schema({
   id: {
     type: String,
-    default: `cart_id_${v4()}`,
+    default: `cart_id_${new Date().getTime()}`,
   },
   favoriteItem: {
     type: [],
