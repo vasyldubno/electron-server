@@ -27,10 +27,4 @@ try {
 	console.log(e)
 }
 
-// app.listen(process.env.PORT, () => console.log(`Server is running on http://localhost:${process.env.PORT}`))
-
-// export default app
 export const handler = serverless(app)
-// module.exports.handler = serverless(app)
-
-
