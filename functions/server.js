@@ -18,7 +18,7 @@ app.use(cors({
 app.use(router)
 
 app.use('/.netlify/functions/server', router)
-app.use('/', (req, res) => res.json({ message: 'test' }))
+app.use('/', (req, res) => res.send('Hello'))
 
 try {
 	mongoose.set("strictQuery", false)
@@ -29,7 +29,7 @@ try {
 
 // app.listen(process.env.PORT, () => console.log(`Server is running on http://localhost:${process.env.PORT}`))
 
-// export default app
+export default app
 export const handler = serverless(app)
 // module.exports.handler = serverless(app)
 
