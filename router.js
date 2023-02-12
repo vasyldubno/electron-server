@@ -16,6 +16,9 @@ import { ApiError } from './services/apiError.js'
 
 export const router = Router()
 
+router.get('/test', (req, res) => {
+  return res.json({ message: 'text'})
+})
 router.get('/api/createCart', CreateCart)
 router.post('/api/retrieveCart', RetrieveCart)
 router.post('/api/updateCart', UpdateCart)
