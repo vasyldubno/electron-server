@@ -30,3 +30,4 @@ app.use('./netlify/functions/api', router)
 // app.listen(process.env.PORT, () => console.log('SERVER IS RUNNING'))
 
 export const handler = serverless(app)
+export default app
