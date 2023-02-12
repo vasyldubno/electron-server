@@ -1,11 +1,11 @@
 {
 	"name": "server",
 	"version": "1.0.0",
-	"main": "index.js",
+	"main": "src/index.js",
 	"license": "MIT",
 	"type": "module",
 	"scripts": {
-		"dev": "nodemon index.js",
+		"dev": "nodemon src/index.js",
 		"build": "netlify deploy --prod",
 		"start": "netlify dev --live"
 	},
@@ -13,6 +13,9 @@
 		"cors": "^2.8.5",
 		"dotenv": "^16.0.3",
 		"express": "^4.18.2",
+		"firebase": "^9.17.1",
+		"firebase-admin": "^11.5.0",
+		"firebase-functions": "^4.2.1",
 		"mongoose": "^6.8.3",
 		"prettier": "^2.8.3",
 		"stripe": "^11.8.0",

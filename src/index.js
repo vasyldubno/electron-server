@@ -2,9 +2,10 @@ import express from 'express'
 import cors from 'cors'
 import * as dotenv from 'dotenv'
 import mongoose from 'mongoose'
-import { router } from '../router.js'
+import { router } from './router.js'
+import funcions from 'firebase-functions'
+
 dotenv.config()
-import serverless from 'serverless-http'
 
 const app = express()
 
@@ -17,9 +18,6 @@ app.use(cors({
 }))
 app.use(router)
 
-app.use('/.netlify/functions/server', router)
-app.use('/', (req, res) => res.json({ message: 'Hello'}))
-
 try {
 	mongoose.set("strictQuery", false)
 	mongoose.connect(process.env.DATABASE_URL, { dbName: 'store' }).then(() => console.log('Connect to DB'))
@@ -27,4 +25,6 @@ try {
 	console.log(e)
 }
 
-export const handler = serverless(app)
+app.listen(process.env.PORT, () => console.log('SERVER IS RUNNING'))
+
+export const api = funcions.https.onRequest(app)
