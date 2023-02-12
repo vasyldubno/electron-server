@@ -3,7 +3,7 @@ import cors from 'cors'
 import * as dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import { router } from './router.js'
-import funcions from 'firebase-functions'
+import serverless from 'serverless-http'
 
 dotenv.config()
 
@@ -25,6 +25,6 @@ try {
 	console.log(e)
 }
 
-app.listen(process.env.PORT, () => console.log('SERVER IS RUNNING'))
+// app.listen(process.env.PORT, () => console.log('SERVER IS RUNNING'))
 
-export const api = funcions.https.onRequest(app)
+export const handler = serverless(app)
