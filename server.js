@@ -32,4 +32,4 @@ try {
 // export default app
 // export const handler = serverless(app)
 
-app.listen(process.env.PORT, () => console.log('SERVER IS RUNNING'))
+app.listen(process.env.PORT, () => console.log(`SERVER IS RUNNING`))

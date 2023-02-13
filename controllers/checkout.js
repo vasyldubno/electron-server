@@ -49,6 +49,7 @@ export const checkout = async (req, res) => {
       orderId: order.orderId 
     })
   } catch(error) {
-    console.log(error.message) 
+    console.log(error.message)
+    res.status(400).json({ message: error.message})
   }
 }
