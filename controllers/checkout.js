@@ -40,8 +40,8 @@ export const checkout = async (req, res) => {
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',
       customer_email: customerData.email,
-      success_url: 'http://localhost:3000/order/confirmed',
-      cancel_url: 'http://localhost:3000?cancel',
+      success_url: `${process.env.CLIENT_URL}/order/confirmed`,
+      cancel_url: `${process.env.CLIENT_URL}?cancel`,
       line_items: lineItems
     })
     res.json({ 
