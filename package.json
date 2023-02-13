@@ -5,25 +5,18 @@
 	"license": "MIT",
 	"type": "module",
 	"scripts": {
-		"dev": "nodemon server.js",
-		"build": "netlify deploy --prod",
-		"start": "netlify dev --live"
+		"dev": "nodemon server.js"
 	},
 	"dependencies": {
 		"cors": "^2.8.5",
 		"dotenv": "^16.0.3",
 		"express": "^4.18.2",
-		"firebase": "^9.17.1",
-		"firebase-functions": "^4.2.1",
 		"mongoose": "^6.8.3",
 		"prettier": "^2.8.3",
 		"stripe": "^11.8.0",
 		"uuid": "^9.0.0"
 	},
 	"devDependencies": {
-		"netlify-cli": "^12.10.0",
-		"netlify-lambda": "^2.0.15",
-		"nodemon": "^2.0.20",
-		"serverless-http": "^3.1.1"
+		"nodemon": "^2.0.20"
 	}
 }

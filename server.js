@@ -4,7 +4,6 @@ import * as dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import { router } from './router.js'
 dotenv.config()
-import serverless from 'serverless-http'
 
 const app = express()
 
