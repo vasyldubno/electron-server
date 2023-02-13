@@ -11,7 +11,10 @@ app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors({ 
-	origin: ['http://localhost:3000', 'http://localhost:3500'],
+	origin: [
+		'http://localhost:3000', 
+		'http://localhost:3500', 
+		'https://electron-client-chi.vercel.app/'],
 	credentials: true
 }))
 app.use(router)
