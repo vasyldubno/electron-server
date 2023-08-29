@@ -14,7 +14,7 @@ app.use(cors({
 	origin: [
 		'http://localhost:3000', 
 		'http://localhost:3500', 
-		'https://electron-client-chi.vercel.app'],
+		'https://electronshop.vercel.app'],
 	credentials: true
 }))
 app.use(router)
