@@ -26,7 +26,7 @@ try {
 	mongoose.set("strictQuery", false)
 	mongoose.connect(process.env.DATABASE_URL, { dbName: 'store' }).then(() => console.log('Connect to DB'))
 } catch(e) {
-	console.log(e)
+	console.log(e) 
 }
 
 // export default app
