@@ -1,5 +1,5 @@
 import express from 'express'
-// import cors from 'cors'
+import cors from 'cors'
 import * as dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import { router } from './router.js'
@@ -10,9 +10,9 @@ const app = express()
 app.use(express.static('public')) 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-// app.use(cors({ 
-// 	origin: 'https://electronshop.vercel.app/',
-// }))
+app.use(cors({ 
+	origin: 'http://electronshop.vercel.app/',
+}))
 app.use(router)
 
 try {
