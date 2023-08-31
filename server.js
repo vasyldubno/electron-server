@@ -1,5 +1,5 @@
 import express from 'express'
-import cors from 'cors'
+// import cors from 'cors'
 import * as dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import { router } from './router.js'
@@ -10,14 +10,10 @@ const app = express()
 app.use(express.static('public')) 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use(cors({ 
-	origin: 'https://electronshop.vercel.app/',
-	// credentials: true
-}))
+// app.use(cors({ 
+// 	origin: 'https://electronshop.vercel.app/',
+// }))
 app.use(router)
-
-// app.use('/.netlify/functions/server', router)
-// app.use('/', (req, res) => res.send('Hello'))
 
 try {
 	mongoose.set("strictQuery", false)
@@ -25,8 +21,5 @@ try {
 } catch(e) {
 	console.log(e) 
 }
-
-// export default app
-// export const handler = serverless(app)
 
 app.listen(process.env.PORT, () => console.log(`SERVER IS RUNNING`, `http://${process.env.DOMAIN}:${process.env.PORT}`))
