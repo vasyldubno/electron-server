@@ -16,7 +16,7 @@ import { ApiError } from './services/apiError.js'
 
 export const router = Router()
 
-router.get('/', (req, res) => {
+router.get('/api/test', (req, res) => {
   return res.json({ message: 'ELECTRON SERVER'})
 })
 router.get('/api/createCart', CreateCart)
