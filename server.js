@@ -11,7 +11,7 @@ app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors({ 
-	origin: 'http://electronshop.vercel.app/',
+	origin: 'https://electronshop.vercel.app/',
 }))
 app.use(router)
 
