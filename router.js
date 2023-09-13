@@ -13,10 +13,11 @@ import { RetrieveProducts } from './controllers/RetrieveProducts.js'
 import { SearchProducts } from './controllers/SearchProducts.js'
 import { UpdateCart } from './controllers/UpdateCart.js'
 import { ApiError } from './services/apiError.js'
+import { Cart } from './models/Cart.js'
 
 export const router = Router()
 
-router.get('/api/test', (req, res) => {
+router.get('/', (req, res) => {
   return res.json({ message: 'ELECTRON SERVER'})
 })
 router.get('/api/createCart', CreateCart)
@@ -35,3 +36,8 @@ router.post('/api/retrieveOrders', RetrieveOrders)
 
 router.post('/api/checkout', checkout)
 router.post('/api/updateOrder', orderController.updateOrder)
+
+router.get('/api/delete-all-carts', async (req, res) => {
+  await Cart.deleteMany()
+  res.json({ message: 'Ok' })
+})
