@@ -1,3 +1,6 @@
+import * as dotenv from 'dotenv'
+dotenv.config()
+
 import Stripe from 'stripe'
 import { Order } from '../models/Order.js'
 
